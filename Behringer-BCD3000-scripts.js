@@ -4,6 +4,8 @@ BehringerBCD3000.debug = false;
 BehringerBCD3000.escratch = [false, false];
 
 BehringerBCD3000.shiftEnabled = false;
+BehringerBCD3000.pflA = false;
+BehringerBCD3000.pflB = false;
 
 //sensitivity setting
 BehringerBCD3000.UseAcceleration = true;
@@ -153,7 +155,6 @@ BehringerBCD3000.toggleShift = function(channel, control, value, status, group) 
 
 BehringerBCD3000.extInA = function(channel, control, value, status, group) {
     if (BehringerBCD3000.shiftEnabled) {
-        // engine.setParameter("[Channel1]", "LoadSelectedTrack", 0.5);
         engine.setParameter("[Channel1]", "loop_halve", 0.5);
 
     } else {
@@ -161,11 +162,42 @@ BehringerBCD3000.extInA = function(channel, control, value, status, group) {
     }
 }
 
+BehringerBCD3000.cueA = function(channel, control, value, status, group) {
+    if (value != 0) {
+        if (BehringerBCD3000.shiftEnabled) {
+            engine.setParameter("[Channel1]", "LoadSelectedTrack", 0.5);
+        } else {
+            if (BehringerBCD3000.pflA) {
+                engine.setParameter("[Channel1]", "pfl", 0);
+                BehringerBCD3000.pflA = false;
+            } else {
+                engine.setParameter("[Channel1]", "pfl", 1);
+                BehringerBCD3000.pflA = true;
+            }
+        }
+    }
+}
+
 BehringerBCD3000.extInB = function(channel, control, value, status, group) {
     if (BehringerBCD3000.shiftEnabled) {
-        // engine.setParameter("[Channel2]", "LoadSelectedTrack", 0.5);
         engine.setParameter("[Channel1]", "loop_double", 0.5);
     } else {
         engine.setParameter("[Channel2]", "loop_double", 0.5);
+    }
+}
+
+BehringerBCD3000.cueB = function(channel, control, value, status, group) {
+    if (value != 0) {
+        if (BehringerBCD3000.shiftEnabled) {
+            engine.setParameter("[Channel2]", "LoadSelectedTrack", 0.5);
+        } else {
+            if (BehringerBCD3000.pflB) {
+                engine.setParameter("[Channel2]", "pfl", 0);
+                BehringerBCD3000.pflB = false;
+            } else {
+                engine.setParameter("[Channel2]", "pfl", 1);
+                BehringerBCD3000.pflB = true;
+            }
+        }
     }
 }

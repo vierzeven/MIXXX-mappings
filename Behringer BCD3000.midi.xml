@@ -437,9 +437,9 @@
                 <!-- B1 -->
                 <midino>0x23</midino>
                 <group>[Channel1]</group>
-                <key>pfl</key>
+                <key>BehringerBCD3000.cueA</key>
                 <options>
-                    <button/>
+                    <script-binding/>
                 </options>
             </control>
 
@@ -449,9 +449,9 @@
                 <!-- C2 -->
                 <midino>0x24</midino>
                 <group>[Channel2]</group>
-                <key>pfl</key>
+                <key>BehringerBCD3000.cueB</key>
                 <options>
-                    <button/>
+                    <script-binding/>
                 </options>
             </control>
 
@@ -763,7 +763,7 @@
                 <off>0x0</off>
             </output>
 
-
+            <!-- TODO: Come up with a function for EXT IN A/B that makes the LEDs useful -->
 
             <!-- DECK 2, CUE -->
             <output>
@@ -790,6 +790,8 @@
                 <on>0x7f</on>
                 <off>0x0</off>
             </output>
+
+            <!-- TODO: Come up with a function for SCRATCH that makes the LEDs useful -->
 
             <!-- DECK 2, RELOOP -->
             <output>
@@ -866,6 +868,23 @@
                 <status>0xb0</status>
                 <!-- CC18 -->
                 <midino>0x12</midino>
+                <on>0x7f</on>
+                <off>0x0</off>
+            </output>
+
+            <!-- TODO: Come up with a function for SCRATCH that makes the LEDs useful -->
+
+            <!-- 21 -->
+            
+            <!-- DECK 1, RELOOP -->
+            <output>
+                <group>[Channel1]</group>
+                <key>loop_enabled</key>
+                <minimum>0.5</minimum>
+                <maximum>1</maximum>
+                <status>0xb0</status>
+                <!-- CC21 -->
+                <midino>0x15</midino>
                 <on>0x7f</on>
                 <off>0x0</off>
             </output>
