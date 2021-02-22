@@ -153,16 +153,19 @@ BehringerBCD3000.toggleShift = function(channel, control, value, status, group) 
 
 BehringerBCD3000.extInA = function(channel, control, value, status, group) {
     if (BehringerBCD3000.shiftEnabled) {
-        engine.setParameter("[Channel1]", "LoadSelectedTrack", 0.5);
+        // engine.setParameter("[Channel1]", "LoadSelectedTrack", 0.5);
+        engine.setParameter("[Channel1]", "loop_halve", 0.5);
+
     } else {
-        engine.setParameter("[Channel1]", "bpm_tap", 0.5);
+        engine.setParameter("[Channel2]", "loop_halve", 0.5);
     }
 }
 
 BehringerBCD3000.extInB = function(channel, control, value, status, group) {
     if (BehringerBCD3000.shiftEnabled) {
-        engine.setParameter("[Channel2]", "LoadSelectedTrack", 0.5);
+        // engine.setParameter("[Channel2]", "LoadSelectedTrack", 0.5);
+        engine.setParameter("[Channel1]", "loop_double", 0.5);
     } else {
-        engine.setParameter("[Channel2]", "bpm_tap", 0.5);
+        engine.setParameter("[Channel2]", "loop_double", 0.5);
     }
 }

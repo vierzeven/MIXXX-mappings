@@ -383,11 +383,23 @@
                 </options>
             </control>
 
-            <!-- DECK 1, FX 1 KILL -->
+            <!-- DECK 1, MAIN FILTER -->
             <control>
                 <status>0x90</status>
                 <!-- G1 -->
                 <midino>0x1F</midino>
+                <group>[QuickEffectRack1_[Channel1]_Effect1]</group>
+                <key>enabled</key>
+                <options>
+                    <button/>
+                </options>
+            </control>
+
+            <!-- DECK 1, FX KILL -->
+            <control>
+                <status>0x90</status>
+                <!-- G#1 -->
+                <midino>0x20</midino>
                 <group>[EffectRack1_EffectUnit1_Effect1]</group>
                 <key>enabled</key>
                 <options>
@@ -395,19 +407,7 @@
                 </options>
             </control>
 
-            <!-- DECK 1, FX 2 KILL -->
-            <control>
-                <status>0x90</status>
-                <!-- G#1 -->
-                <midino>0x20</midino>
-                <group>[EffectRack1_EffectUnit1_Effect2]</group>
-                <key>enabled</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-
-            <!-- DECK 2, FX 1 KILL -->
+            <!-- DECK 2, FX KILL -->
             <control>
                 <status>0x90</status>
                 <!-- A1 -->
@@ -419,12 +419,12 @@
                 </options>
             </control>
 
-            <!-- DECK 2, FX 2 KILL -->
+            <!-- DECK 2, MAIN FILTER -->
             <control>
                 <status>0x90</status>
                 <!-- A#1 -->
                 <midino>0x22</midino>
-                <group>[EffectRack1_EffectUnit2_Effect2]</group>
+                <group>[QuickEffectRack1_[Channel2]_Effect1]</group>
                 <key>enabled</key>
                 <options>
                     <button/>
@@ -600,10 +600,21 @@
                 </options>
             </control>
 
-            <!-- DECK 1, FX 1 -->
+            <!-- DECK 1, MAIN FILTER AMOUNT -->
             <control>
                 <status>0xb0</status>
                 <midino>0xD</midino>
+                <group>[QuickEffectRack1_[Channel1]]</group>
+                <key>super1</key>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+
+            <!-- DECK 1, FX AMOUNT -->
+            <control>
+                <status>0xb0</status>
+                <midino>0xE</midino>
                 <group>[EffectRack1_EffectUnit1_Effect1]</group>
                 <key>meta</key>
                 <options>
@@ -611,18 +622,7 @@
                 </options>
             </control>
 
-            <!-- DECK 1, FX 2 -->
-            <control>
-                <status>0xb0</status>
-                <midino>0xE</midino>
-                <group>[EffectRack1_EffectUnit1_Effect2]</group>
-                <key>meta</key>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-
-            <!-- DECK 2, FX 1 -->
+            <!-- DECK 2, FX AMOUNT -->
             <control>
                 <status>0xb0</status>
                 <midino>0xF</midino>
@@ -633,12 +633,12 @@
                 </options>
             </control>
 
-            <!-- DECK 2, FX 2 -->
+            <!-- DECK 2, MAIN FILTER AMOUNT -->
             <control>
                 <status>0xb0</status>
                 <midino>0x10</midino>
-                <group>[EffectRack1_EffectUnit2_Effect2]</group>
-                <key>meta</key>
+                <group>[QuickEffectRack1_[Channel2]]</group>
+                <key>super1</key>
                 <options>
                     <normal/>
                 </options>
@@ -676,607 +676,215 @@
                     <script-binding/>
                 </options>
             </control>
-
-            <!-- 
-            <control>
-                <status>0x90</status>
-                <midino>0x1</midino>
-                <group>[Channel1]</group>
-                <key>fwd</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0x2</midino>
-                <group>[Channel1]</group>
-                <key>rate_temp_down</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0x3</midino>
-                <group>[Channel1]</group>
-                <key>rate_temp_up</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0x4</midino>
-                <group>[Channel1]</group>
-                <key>cue_set</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0x5</midino>
-                <group>[Channel1]</group>
-                <key>reloop_exit</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0x6</midino>
-                <group>[Channel2]</group>
-                <key>back</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0x7</midino>
-                <group>[Channel2]</group>
-                <key>fwd</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0x8</midino>
-                <group>[Channel2]</group>
-                <key>rate_temp_down</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0x9</midino>
-                <group>[Channel2]</group>
-                <key>rate_temp_up</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0xa</midino>
-                <group>[Channel2]</group>
-                <key>cue_set</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0xb</midino>
-                <group>[Channel2]</group>
-                <key>reloop_exit</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0xc</midino>
-                <group>[Channel1]</group>
-                <key>filterLowKill</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0xd</midino>
-                <group>[Channel1]</group>
-                <key>filterMidKill</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0xe</midino>
-                <group>[Channel1]</group>
-                <key>filterHighKill</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0xf</midino>
-                <group>[Channel1]</group>
-                <key>BehringerBCD3000.loop</key>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0x10</midino>
-                <group>[Channel1]</group>
-                <key>beatsync</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0x11</midino>
-                <group>[Channel1]</group>
-                <key>BehringerBCD3000.scratchButton</key>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <status>0xb0</status>
-                <midino>0x0</midino>
-                <group>[Channel1]</group>
-                <key>volume</key>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0x12</midino>
-                <group>[Channel1]</group>
-                <key>BehringerBCD3000.test</key>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <status>0xb0</status>
-                <midino>0x1</midino>
-                <group>[Master]</group>
-                <key>crossfader</key>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0x13</midino>
-                <group>[Channel1]</group>
-                <key>cue_default</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0xb0</status>
-                <midino>0x2</midino>
-                <group>[Channel2]</group>
-                <key>volume</key>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0x14</midino>
-                <group>[Channel2]</group>
-                <key>filterLowKill</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-
-            <control>
-                <status>0x90</status>
-                <midino>0x15</midino>
-                <group>[Channel2]</group>
-                <key>filterMidKill</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0xb0</status>
-                <midino>0x4</midino>
-                <group>[Channel1]</group>
-                <key>filterMid</key>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0x16</midino>
-                <group>[Channel2]</group>
-                <key>filterHighKill</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0xb0</status>
-                <midino>0x5</midino>
-                <group>[Channel1]</group>
-                <key>filterHigh</key>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0x17</midino>
-                <group>[Channel2]</group>
-                <key>BehringerBCD3000.loop</key>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <status>0xb0</status>
-                <midino>0x6</midino>
-                <group>[Channel1]</group>
-                <key>pregain</key>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0x18</midino>
-                <group>[Channel2]</group>
-                <key>beatsync</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0xb0</status>
-                <midino>0x7</midino>
-                <group>[Channel2]</group>
-                <key>filterLow</key>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0x19</midino>
-                <group>[Channel2]</group>
-                <key>BehringerBCD3000.scratchButton</key>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <status>0xb0</status>
-                <midino>0x8</midino>
-                <group>[Channel2]</group>
-                <key>filterMid</key>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0x1a</midino>
-                <group>[Channel2]</group>
-                <key>play</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0x1b</midino>
-                <group>[Channel2]</group>
-                <key>cue_default</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0xb0</status>
-                <midino>0x9</midino>
-                <group>[Channel2]</group>
-                <key>filterHigh</key>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <status>0xb0</status>
-                <midino>0xa</midino>
-                <group>[Channel2]</group>
-                <key>pregain</key>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <status>0xb0</status>
-                <midino>0xb</midino>
-                <group>[Channel1]</group>
-                <key>rate</key>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <status>0xb0</status>
-                <midino>0xc</midino>
-                <group>[Channel2]</group>
-                <key>rate</key>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <status>0xb0</status>
-                <midino>0xd</midino>
-                <group>[Flanger]</group>
-                <key>lfoDepth</key>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0x20</midino>
-                <group>[Channel1]</group>
-                <key>flanger</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0xb0</status>
-                <midino>0xe</midino>
-                <group>[Flanger]</group>
-                <key>lfoDelay</key>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0x21</midino>
-                <group>[Channel2]</group>
-                <key>flanger</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0xb0</status>
-                <midino>0xf</midino>
-                <group>[Flanger]</group>
-                <key>lfoPeriod</key>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <status>0xb0</status>
-                <midino>0x10</midino>
-                <group>[Master]</group>
-                <key>balance</key>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0x23</midino>
-                <group>[Channel1]</group>
-                <key>pfl</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <status>0xb0</status>
-                <midino>0x11</midino>
-                <group>[Master]</group>
-                <key>headMix</key>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <status>0x90</status>
-                <midino>0x24</midino>
-                <group>[Channel2]</group>
-                <key>pfl</key>
-                <options>
-                    <button/>
-                </options>
-            </control>
-
-             -->
-            
         </controls>
+
+        <!-- OUTPUTS -->
+
         <outputs>
-<!--         
+
+
+            <!-- CUE B -->
+            <output>
+                <group>[Channel2]</group>
+                <key>pfl</key>
+                <minimum>0.5</minimum>
+                <maximum>1</maximum>
+                <status>0xb0</status>
+                <!-- CC01 -->
+                <midino>0x01</midino>
+                <on>0x7f</on>
+                <off>0x0</off>
+            </output>
+
+
+            <!-- CUE A -->
+            <output>
+                <group>[Channel1]</group>
+                <key>pfl</key>
+                <minimum>0.5</minimum>
+                <maximum>1</maximum>
+                <status>0xb0</status>
+                <!-- CC02 -->
+                <midino>0x02</midino>
+                <on>0x7f</on>
+                <off>0x0</off>
+            </output>
+
+            <!-- DECK 2, MAIN FILTER -->
+            <output>
+                <group>[QuickEffectRack1_[Channel2]_Effect1]</group>
+                <key>enabled</key>
+                <minimum>0.5</minimum>
+                <maximum>1</maximum>
+                <status>0xb0</status>
+                <!-- CC03 -->
+                <midino>0x03</midino>
+                <on>0x7f</on>
+                <off>0x0</off>
+            </output>
+
+            <!-- DECK 2, FX KILL -->
+            <output>
+                <group>[EffectRack1_EffectUnit2_Effect1]</group>
+                <key>enabled</key>
+                <minimum>0.5</minimum>
+                <maximum>1</maximum>
+                <status>0xb0</status>
+                <!-- CC04 -->
+                <midino>0x04</midino>
+                <on>0x7f</on>
+                <off>0x0</off>
+            </output>
+
+            <!-- DECK 1, FX KILL -->
+            <output>
+                <group>[EffectRack1_EffectUnit1_Effect1]</group>
+                <key>enabled</key>
+                <minimum>0.5</minimum>
+                <maximum>1</maximum>
+                <status>0xb0</status>
+                <!-- CC05 -->
+                <midino>0x05</midino>
+                <on>0x7f</on>
+                <off>0x0</off>
+            </output>
+
+
+            <!-- DECK 1, MAIN FILTER -->
+            <output>
+                <group>[QuickEffectRack1_[Channel1]_Effect1]</group>
+                <key>enabled</key>
+                <minimum>0.5</minimum>
+                <maximum>1</maximum>
+                <status>0xb0</status>
+                <!-- CC06 -->
+                <midino>0x06</midino>
+                <on>0x7f</on>
+                <off>0x0</off>
+            </output>
+
+
+
+            <!-- DECK 2, CUE -->
+            <output>
+                <group>[Channel2]</group>
+                <key>cue_default</key>
+                <minimum>0.5</minimum>
+                <maximum>1</maximum>
+                <status>0xb0</status>
+                <!-- CC09 -->
+                <midino>0x09</midino>
+                <on>0x7f</on>
+                <off>0x0</off>
+            </output>
+
+            <!-- DECK 2, PLAY -->
+            <output>
+                <group>[Channel2]</group>
+                <key>play</key>
+                <minimum>0.5</minimum>
+                <maximum>1</maximum>
+                <status>0xb0</status>
+                <!-- CC10 -->
+                <midino>0x0A</midino>
+                <on>0x7f</on>
+                <off>0x0</off>
+            </output>
+
+            <!-- DECK 2, RELOOP -->
+            <output>
+                <group>[Channel2]</group>
+                <key>loop_enabled</key>
+                <minimum>0.5</minimum>
+                <maximum>1</maximum>
+                <status>0xb0</status>
+                <!-- CC13 -->
+                <midino>0x0D</midino>
+                <on>0x7f</on>
+                <off>0x0</off>
+            </output>
+
+            <!-- DECK 2, FILTER HIGH KILL -->
+            <output>
+                <group>[Channel2]</group>
+                <key>filterHighKill</key>
+                <minimum>0.5</minimum>
+                <maximum>1</maximum>
+                <status>0xb0</status>
+                <!-- CC14 -->
+                <midino>0x0E</midino>
+                <on>0x7f</on>
+                <off>0x0</off>
+            </output>
+
+
+            <!-- DECK 2, FILTER MID KILL -->
+            <output>
+                <group>[Channel2]</group>
+                <key>filterMidKill</key>
+                <minimum>0.5</minimum>
+                <maximum>1</maximum>
+                <status>0xb0</status>
+                <!-- CC15 -->
+                <midino>0x0F</midino>
+                <on>0x7f</on>
+                <off>0x0</off>
+            </output>
+
+            <!-- DECK 2, FILTER LOW KILL -->
             <output>
                 <group>[Channel2]</group>
                 <key>filterLowKill</key>
                 <minimum>0.5</minimum>
                 <maximum>1</maximum>
                 <status>0xb0</status>
+                <!-- CC16 -->
                 <midino>0x10</midino>
                 <on>0x7f</on>
                 <off>0x0</off>
             </output>
-            <output>
-                <group>[Channel1]</group>
-                <key>filterHighKill</key>
-                <minimum>0.5</minimum>
-                <maximum>1</maximum>
-                <status>0xb0</status>
-                <midino>0x16</midino>
-                <on>0x7f</on>
-                <off>0x0</off>
-            </output>
-            <output>
-                <group>[Channel2]</group>
-                <key>loop_enabled</key>
-                <minimum>0.5</minimum>
-                <maximum>1</maximum>
-                <status>0xb0</status>
-                <midino>0xd</midino>
-                <on>0x7f</on>
-                <off>0x0</off>
-            </output>
-            <output>
-                <group>[Channel1]</group>
-                <key>filterMidKill</key>
-                <minimum>0.5</minimum>
-                <maximum>1</maximum>
-                <status>0xb0</status>
-                <midino>0x17</midino>
-                <on>0x7f</on>
-                <off>0x0</off>
-            </output>
-            <output>
-                <group>[Channel1]</group>
-                <key>pfl</key>
-                <minimum>0.5</minimum>
-                <maximum>1</maximum>
-                <status>0xb0</status>
-                <midino>0x2</midino>
-                <on>0x7f</on>
-                <off>0x0</off>
-            </output>
+
+            <!-- DECK 1, CUE -->
             <output>
                 <group>[Channel1]</group>
                 <key>cue_default</key>
                 <minimum>0.5</minimum>
                 <maximum>1</maximum>
                 <status>0xb0</status>
+                <!-- CC17 -->
                 <midino>0x11</midino>
                 <on>0x7f</on>
                 <off>0x0</off>
             </output>
+
+            <!-- DECK 1, PLAY -->
             <output>
-                <group>[Channel2]</group>
-                <key>pfl</key>
-                <minimum>0.5</minimum>
-                <maximum>1</maximum>
-                <status>0xb0</status>
-                <midino>0x1</midino>
-                <on>0x7f</on>
-                <off>0x0</off>
-            </output>
-            <output>
-                <group>[Channel2]</group>
-                <key>filterMidKill</key>
-                <minimum>0.5</minimum>
-                <maximum>1</maximum>
-                <status>0xb0</status>
-                <midino>0xf</midino>
-                <on>0x7f</on>
-                <off>0x0</off>
-            </output>
-            <output>
-                <group>[Channel2]</group>
-                <key>filterHighKill</key>
-                <minimum>0.5</minimum>
-                <maximum>1</maximum>
-                <status>0xb0</status>
-                <midino>0xe</midino>
-                <on>0x7f</on>
-                <off>0x0</off>
-            </output>
-            <output>
-                <group>[Channel2]</group>
-                <key>cue_default</key>
-                <minimum>0.5</minimum>
-                <maximum>1</maximum>
-                <status>0xb0</status>
-                <midino>0x9</midino>
-                <on>0x7f</on>
-                <off>0x0</off>
-            </output>
-            <output>
-                <group>[Channel2]</group>
+                <group>[Channel1]</group>
                 <key>play</key>
                 <minimum>0.5</minimum>
                 <maximum>1</maximum>
                 <status>0xb0</status>
-                <midino>0xa</midino>
+                <!-- CC18 -->
+                <midino>0x12</midino>
                 <on>0x7f</on>
                 <off>0x0</off>
             </output>
+
+
+            <!-- DECK 1, FILTER LOW KILL -->
             <output>
                 <group>[Channel1]</group>
                 <key>filterLowKill</key>
                 <minimum>0.5</minimum>
                 <maximum>1</maximum>
                 <status>0xb0</status>
+                <!-- CC24 -->
                 <midino>0x18</midino>
                 <on>0x7f</on>
                 <off>0x0</off>
             </output>
-            <output>
-                <group>[Channel2]</group>
-                <key>flanger</key>
-                <minimum>0.5</minimum>
-                <maximum>1</maximum>
-                <status>0xb0</status>
-                <midino>0x4</midino>
-                <on>0x7f</on>
-                <off>0x0</off>
-            </output>
-            <output>
-                <group>[Channel1]</group>
-                <key>play</key>
-                <minimum>0.5</minimum>
-                <maximum>1</maximum>
-                <status>0xb0</status>
-                <midino>0x12</midino>
-                <on>0x7f</on>
-                <off>0x0</off>
-            </output>
-            <output>
-                <group>[Channel1]</group>
-                <key>loop_enabled</key>
-                <minimum>0.5</minimum>
-                <maximum>1</maximum>
-                <status>0xb0</status>
-                <midino>0x15</midino>
-                <on>0x7f</on>
-                <off>0x0</off>
-            </output>
-            <output>
-                <group>[Channel1]</group>
-                <key>flanger</key>
-                <minimum>0.5</minimum>
-                <maximum>1</maximum>
-                <status>0xb0</status>
-                <midino>0x5</midino>
-                <on>0x7f</on>
-                <off>0x0</off>
-            </output> -->
+
+
         </outputs>
     </controller>
 </MixxxMIDIPreset>
