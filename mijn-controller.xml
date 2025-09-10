@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<controller id="mijn-controller" name="Mijn Controller (Custom)" author="Joey" description="Testmapping voor Mixxx">
+    <scriptfiles>
+        <script filename="mijn-controller.js"/>
+    </scriptfiles>
+
+    <!-- Voorbeeld van één knop -->
+    <controls>
+        <control>
+            <group>[Master]</group>
+            <key>play</key>
+            <status>0x90</status>   <!-- Note On op MIDI-kanaal 1 -->
+            <midino>0x01</midino>   <!-- MIDI-note C#0 -->
+            <options>
+                <script function="mijnController.playToggle"/>
+            </options>
+        </control>
+    </controls>
+</controller>
