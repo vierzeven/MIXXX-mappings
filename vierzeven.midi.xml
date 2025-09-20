@@ -30,6 +30,16 @@
                     <button/>
                 </options>
             </control>
+            <!-- SCRATCH BUTTON -->
+            <control>
+                <group>[Channel1]</group>
+                <key>vierzeven.scratchButton</key>
+                <status>0x90</status>
+                <midino>0x11</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>            
             <!-- FWD -->
             <control>
                 <group>[Channel1]</group>
