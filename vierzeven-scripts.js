@@ -34,10 +34,6 @@ function jogWheel(channel, control, value, status, group) {
     return vierzeven.jogWheel(channel, control, value, status, group);
 }
 
-function crossfader(channel, control, value, status, group) {
-    return vierzeven.crossfader(channel, control, value, status, group);
-}
-
 var vierzeven = {};
 
 vierzeven.debug = true;
@@ -241,8 +237,4 @@ vierzeven.cueB = function(channel, control, value, status, group) {
             }
         }
     }
-}
-
-vierzeven.crossfader = function(channel, control, value, status, group) {
-    console.log("Crossfader moved to " + value);
 }

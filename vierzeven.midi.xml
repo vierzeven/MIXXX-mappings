@@ -17,7 +17,6 @@
                 <status>0xB0</status>
                 <midino>0x01</midino>
                 <options>
-                    <script-binding/>
                 </options>
             </control>
         <!-- CHANNEL 1 CONTROLS -->
