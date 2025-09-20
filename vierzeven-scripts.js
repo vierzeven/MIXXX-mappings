@@ -30,9 +30,9 @@ if (typeof engine === 'undefined') {
     };
 }
 
-function jogWheel(channel, control, value, status, group) {
-    return vierzeven.jogWheel(channel, control, value, status, group);
-}
+// function jogWheel(channel, control, value, status, group) {
+//     return vierzeven.jogWheel(channel, control, value, status, group);
+// }
 
 var vierzeven = {};
 

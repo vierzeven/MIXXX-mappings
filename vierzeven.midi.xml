@@ -353,7 +353,7 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>jogWheel</key>
+                <key>vierzeven.jogWheel</key>
                 <status>0xB0</status>
                 <midino>0x12</midino>
                 <options>
@@ -371,7 +371,7 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>jogWheel</key>
+                <key>vierzeven.jogWheel</key>
                 <status>0xB0</status>
                 <midino>0x13</midino>
                 <options>
@@ -452,7 +452,7 @@
             </control>
             <control>
                 <group></group>
-                <key>toggleShift</key>
+                <key>vierzeven.toggleShift</key>
                 <status>0x90</status>
                 <midino>0x1C</midino>
                 <options>
@@ -461,7 +461,7 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>extInA</key>
+                <key>vierzeven.extInA</key>
                 <status>0x90</status>
                 <midino>0x1D</midino>
                 <options>
@@ -470,7 +470,7 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>extInB</key>
+                <key>vierzeven.extInB</key>
                 <status>0x90</status>
                 <midino>0x1E</midino>
                 <options>
@@ -515,7 +515,7 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>cueA</key>
+                <key>vierzeven.cueA</key>
                 <status>0x90</status>
                 <midino>0x23</midino>
                 <options>
@@ -524,7 +524,7 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>cueB</key>
+                <key>vierzeven.cueB</key>
                 <status>0x90</status>
                 <midino>0x24</midino>
                 <options>
