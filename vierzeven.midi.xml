@@ -12,10 +12,14 @@
         <controls>
         <!-- MASTER CONTROLS -->
             <control>
+                <!-- group en key specificeren welke functionaliteit in Mixxx we aan het mappen zijn -->
+                <!-- Let op: als we een scriptbinding maken, specificeert key welke functie we willen aanroepen -->
                 <group>[Master]</group>
                 <key>crossfader</key>
+                <!-- status en midino (ctrl in de debugger) specificeren welk midi signaal we willen koppelen -->
                 <status>0xB0</status>
                 <midino>0x01</midino>
+                <!-- options geeft aan of het bijvoorbeeld een button is, of dat we iets willen scripten -->
                 <options>
                 </options>
             </control>
