@@ -5,9 +5,23 @@
     </info>
     <controller id="">
         <scriptfiles>
-            <file functionprefix="vierzeven" filename="vierzeven-scripts.js"/>
+            <file filename="lodash.mixxx.js" functionprefix=""/>
+            <file filename="midi-components-0.0.js" functionprefix=""/>
+            <file filename="vierzeven-scripts.js" functionprefix="vierzeven"/>
         </scriptfiles>
         <controls>
+        <!-- MASTER CONTROLS -->
+            <control>
+                <group>[Master]</group>
+                <key>crossfader</key>
+                <status>0xB0</status>
+                <midino>0x01</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+        <!-- CHANNEL 1 CONTROLS -->
+            <!-- BACK -->
             <control>
                 <group>[Channel1]</group>
                 <key>back</key>
@@ -17,15 +31,7 @@
                     <button/>
                 </options>
             </control>
-            <control>
-                <group>[Channel1]</group>
-                <key>volume</key>
-                <status>0xB0</status>
-                <midino>0x00</midino>
-                <options>
-                    <normal/>
-                </options>
-            </control>
+            <!-- FWD -->
             <control>
                 <group>[Channel1]</group>
                 <key>fwd</key>
@@ -35,15 +41,17 @@
                     <button/>
                 </options>
             </control>
+            <!-- VOLUME -->
             <control>
-                <group>[Master]</group>
-                <key>crossfader</key>
+                <group>[Channel1]</group>
+                <key>volume</key>
                 <status>0xB0</status>
-                <midino>0x01</midino>
+                <midino>0x00</midino>
                 <options>
                     <normal/>
                 </options>
             </control>
+            <!-- RATE TEMP DOWN -->
             <control>
                 <group>[Channel1]</group>
                 <key>rate_temp_down</key>
@@ -53,15 +61,7 @@
                     <button/>
                 </options>
             </control>
-            <control>
-                <group>[Channel2]</group>
-                <key>volume</key>
-                <status>0xB0</status>
-                <midino>0x02</midino>
-                <options>
-                    <normal/>
-                </options>
-            </control>
+            <!-- RATE TEMP UP -->
             <control>
                 <group>[Channel1]</group>
                 <key>rate_temp_up</key>
@@ -71,15 +71,37 @@
                     <button/>
                 </options>
             </control>
+            <!-- EQ LOW DIAL -->
             <control>
-                <group>[Channel1]</group>
-                <key>filterLow</key>
+                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
+                <key>parameter1</key>
                 <status>0xB0</status>
                 <midino>0x03</midino>
                 <options>
                     <normal/>
                 </options>
             </control>
+            <!-- EQ MID DIAL -->
+            <control>
+                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
+                <key>parameter2</key>
+                <status>0xB0</status>
+                <midino>0x04</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+            <!-- EQ HIGH DIAL -->
+            <control>
+                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
+                <key>parameter3</key>
+                <status>0xB0</status>
+                <midino>0x05</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+            <!-- CUE SET -->
             <control>
                 <group>[Channel1]</group>
                 <key>cue_set</key>
@@ -89,15 +111,7 @@
                     <button/>
                 </options>
             </control>
-            <control>
-                <group>[Channel1]</group>
-                <key>filterMid</key>
-                <status>0xB0</status>
-                <midino>0x04</midino>
-                <options>
-                    <normal/>
-                </options>
-            </control>
+            <!-- RELOOP TOGGLE -->
             <control>
                 <group>[Channel1]</group>
                 <key>reloop_toggle</key>
@@ -107,24 +121,7 @@
                     <button/>
                 </options>
             </control>
-            <control>
-                <group>[Channel1]</group>
-                <key>filterHigh</key>
-                <status>0xB0</status>
-                <midino>0x05</midino>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <group>[Channel2]</group>
-                <key>back</key>
-                <status>0x90</status>
-                <midino>0x06</midino>
-                <options>
-                    <button/>
-                </options>
-            </control>
+            <!-- PREGAIN -->
             <control>
                 <group>[Channel1]</group>
                 <key>pregain</key>
@@ -134,18 +131,10 @@
                     <normal/>
                 </options>
             </control>
+            <!-- EQ LOW DIAL -->
             <control>
-                <group>[Channel2]</group>
-                <key>fwd</key>
-                <status>0x90</status>
-                <midino>0x07</midino>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <group>[Channel2]</group>
-                <key>filterLow</key>
+                <group>[EqualizerRack1_[Channel2]_Effect1]</group>
+                <key>parameter1</key>
                 <status>0xB0</status>
                 <midino>0x07</midino>
                 <options>
@@ -161,9 +150,10 @@
                     <button/>
                 </options>
             </control>
+            <!-- EQ MID -->
             <control>
-                <group>[Channel2]</group>
-                <key>filterMid</key>
+                <group>[EqualizerRack1_[Channel2]_Effect1]</group>
+                <key>parameter2</key>
                 <status>0xB0</status>
                 <midino>0x08</midino>
                 <options>
@@ -179,9 +169,10 @@
                     <button/>
                 </options>
             </control>
+            <!-- EQ HIGH -->
             <control>
-                <group>[Channel2]</group>
-                <key>filterHigh</key>
+                <group>[EqualizerRack1_[Channel2]_Effect1]</group>
+                <key>parameter3</key>
                 <status>0xB0</status>
                 <midino>0x09</midino>
                 <options>
@@ -226,12 +217,21 @@
                 </options>
             </control>
             <control>
-                <group>[Channel1]</group>
-                <key>filterLowKill</key>
+                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
+                <key>parameter1</key>
                 <status>0x90</status>
                 <midino>0x0C</midino>
                 <options>
                     <button/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>volume</key>
+                <status>0xB0</status>
+                <midino>0x02</midino>
+                <options>
+                    <normal/>
                 </options>
             </control>
             <control>
@@ -281,6 +281,24 @@
                 </options>
             </control>
             <control>
+                <group>[Channel2]</group>
+                <key>back</key>
+                <status>0x90</status>
+                <midino>0x06</midino>
+                <options>
+                    <button/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>fwd</key>
+                <status>0x90</status>
+                <midino>0x07</midino>
+                <options>
+                    <button/>
+                </options>
+            </control>
+            <control>
                 <group>[Channel1]</group>
                 <key>beatloop_activate</key>
                 <status>0x90</status>
@@ -317,15 +335,6 @@
                 </options>
             </control>
             <control>
-                <group>[Channel1]</group>
-                <key>scratch2_enabled</key>
-                <status>0x90</status>
-                <midino>0x11</midino>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
                 <group>[Master]</group>
                 <key>headMix</key>
                 <status>0xB0</status>
@@ -345,7 +354,7 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>vierzeven.jogWheel</key>
+                <key>jogWheel</key>
                 <status>0xB0</status>
                 <midino>0x12</midino>
                 <options>
@@ -363,7 +372,7 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>vierzeven.jogWheel</key>
+                <key>jogWheel</key>
                 <status>0xB0</status>
                 <midino>0x13</midino>
                 <options>
@@ -389,8 +398,8 @@
                 </options>
             </control>
             <control>
-                <group>[Channel2]</group>
-                <key>filterHighKill</key>
+                <group>[EqualizerRack1_[Channel2]_Effect1]</group>
+                <key>button_parameter3</key>
                 <status>0x90</status>
                 <midino>0x16</midino>
                 <options>
@@ -444,7 +453,7 @@
             </control>
             <control>
                 <group></group>
-                <key>vierzeven.toggleShift</key>
+                <key>toggleShift</key>
                 <status>0x90</status>
                 <midino>0x1C</midino>
                 <options>
@@ -453,7 +462,7 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>vierzeven.extInA</key>
+                <key>extInA</key>
                 <status>0x90</status>
                 <midino>0x1D</midino>
                 <options>
@@ -462,7 +471,7 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>vierzeven.extInB</key>
+                <key>extInB</key>
                 <status>0x90</status>
                 <midino>0x1E</midino>
                 <options>
@@ -475,7 +484,7 @@
                 <status>0x90</status>
                 <midino>0x1F</midino>
                 <options>
-                    <button/>normal
+                    <button/>
                 </options>
             </control>
             <control>
@@ -494,7 +503,7 @@
                 <midino>0x21</midino>
                 <options>
                     <button/>
-                </options>normal
+                </options>
             </control>
             <control>
                 <group>[QuickEffectRack1_[Channel2]_Effect1]</group>
@@ -507,7 +516,7 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>vierzeven.cueA</key>
+                <key>cueA</key>
                 <status>0x90</status>
                 <midino>0x23</midino>
                 <options>
@@ -516,7 +525,7 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>vierzeven.cueB</key>
+                <key>cueB</key>
                 <status>0x90</status>
                 <midino>0x24</midino>
                 <options>
@@ -533,8 +542,8 @@
                 <minimum>0.5</minimum>
             </output>
             <output>
-                <group>[Channel1]</group>
-                <key>filterLowKill</key>
+                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
+                <key>button_parameter1</key>
                 <status>0xB0</status>
                 <midino>0x18</midino>
                 <minimum>0.5</minimum>
@@ -568,22 +577,22 @@
                 <minimum>0.5</minimum>
             </output>
             <output>
-                <group>[Channel2]</group>
-                <key>filterHighKill</key>
+                <group>[EqualizerRack1_[Channel2]_Effect1]</group>
+                <key>button_parameter3</key>
                 <status>0xB0</status>
                 <midino>0x0E</midino>
                 <minimum>0.5</minimum>
             </output>
             <output>
-                <group>[Channel2]</group>
-                <key>filterLowKill</key>
+                <group>[EqualizerRack1_[Channel2]_Effect1]</group>
+                <key>button_parameter1</key>
                 <status>0xB0</status>
                 <midino>0x10</midino>
                 <minimum>0.5</minimum>
             </output>
             <output>
-                <group>[Channel2]</group>
-                <key>filterMidKill</key>
+                <group>[EqualizerRack1_[Channel2]_Effect1]</group>
+                <key>button_parameter2</key>
                 <status>0xB0</status>
                 <midino>0x0F</midino>
                 <minimum>0.5</minimum>

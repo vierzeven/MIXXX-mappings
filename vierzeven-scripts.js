@@ -1,6 +1,46 @@
-function vierzeven () {}
+console.log("vierzeven-scripts.js loaded");
 
-vierzeven.debug = false;
+// Ensure midi object exists (Mixxx provides it in controller scripts)
+if (typeof midi === 'undefined') {
+    var midi = {};
+    midi.sendShortMsg = function() {
+        // Dummy implementation for testing outside Mixxx
+        console.log("midi.sendShortMsg called with", arguments);
+    };
+}
+
+// Ensure engine object exists (Mixxx provides it in controller scripts)
+if (typeof engine === 'undefined') {
+    var engine = {
+        setParameter: function(group, control, value) {
+            console.log("engine.setParameter called with", group, control, value);
+        },
+        setValue: function(group, control, value) {
+            console.log("engine.setValue called with", group, control, value);
+        },
+        scratchTick: function(deck, value) {
+            console.log("engine.scratchTick called with", deck, value);
+        },
+        scratchEnable: function(deck, samplesPerRev, rpm, alpha, beta) {
+            console.log("engine.scratchEnable called with", deck, samplesPerRev, rpm, alpha, beta);
+        },
+        scratchDisable: function(deck) {
+            console.log("engine.scratchDisable called with", deck);
+        }
+    };
+}
+
+function jogWheel(channel, control, value, status, group) {
+    return vierzeven.jogWheel(channel, control, value, status, group);
+}
+
+function crossfader(channel, control, value, status, group) {
+    return vierzeven.crossfader(channel, control, value, status, group);
+}
+
+var vierzeven = {};
+
+vierzeven.debug = true;
 vierzeven.escratch = [false, false];
 
 vierzeven.shiftEnabled = false;
@@ -40,7 +80,7 @@ vierzeven.shutdown = function () {
 vierzeven.reset = function () {
 
     // Turn off all the lights
-    for (i = 0; i <= 25; i++) {
+    for (let i = 0; i <= 25; i++) {
         midi.sendShortMsg(0xB0, i, 0);
     }
 
@@ -52,7 +92,7 @@ vierzeven.getDeck = function (group) {
     else if (group == "[Channel2]")
         return 1;
     
-    print("Invalid group : " + group);
+    console.log("Invalid group : " + group);
     return -1; // error
 }
 
@@ -60,7 +100,7 @@ vierzeven.getDeck = function (group) {
 //Scratch, cue search and pitch bend function
 vierzeven.jogWheel = function (channel, control, value, status, group) {
 
-    print("JOGGING... JOGGING...");
+    console.log("JOGGING... JOGGING...");
 
     if (vierzeven.shiftEnabled) {
         if (value >= 65) {
@@ -69,24 +109,24 @@ vierzeven.jogWheel = function (channel, control, value, status, group) {
             engine.setParameter("[Library]", "MoveUp", 0.5);
         }
     } else {
-        deck = vierzeven.getDeck(group);
+        let deck = vierzeven.getDeck(group);
 
         if (vierzeven.escratch[deck]) {
         
     
-            scratchValue = (value - 0x40);
+            let scratchValue = (value - 0x40);
             engine.scratchTick(deck + 1, scratchValue);
     
             if (vierzeven.debug)
-                print(group + " scratch tick : " + scratchValue);
+                console.log(group + " scratch tick : " + scratchValue);
     
         } else {
     
-            jogValue = (value - 0x40) * vierzeven.JogSensivity;
+            let jogValue = (value - 0x40) * vierzeven.JogSensivity;
             engine.setValue(group, "jog", jogValue);
     
             if (vierzeven.debug)
-                print(group + " pitching jog adjust : " + jogValue);
+                console.log(group + " pitching jog adjust : " + jogValue);
     
         }
     
@@ -100,12 +140,12 @@ vierzeven.scratchButton = function (channel, control, value, status, group) {
     if (value != 0x7F)
         return;
 
-    deck = vierzeven.getDeck(group);
+    let deck = vierzeven.getDeck(group);
 
     vierzeven.escratch[deck] = !vierzeven.escratch[deck];
 
     if (vierzeven.debug)
-        print(group + " scratch enabled :" + vierzeven.escratch[deck]);
+        console.log(group + " scratch enabled :" + vierzeven.escratch[deck]);
 
     if (vierzeven.escratch[deck]) {
         // Turn on the scratch light
@@ -131,13 +171,14 @@ vierzeven.scratchButton = function (channel, control, value, status, group) {
 
 //Set loop function 
 vierzeven.loop = function (channel, control, value, status, group) {
+    let action;
     if (value)
         action = "loop_in";
     else
         action = "loop_out";
 
     if (vierzeven.debug)
-        print(group + " " + action);
+        console.log(group + " " + action);
 
      engine.setValue(group, action, 1);
 };
@@ -150,7 +191,7 @@ vierzeven.loop = function (channel, control, value, status, group) {
 
 vierzeven.toggleShift = function(channel, control, value, status, group) {
     vierzeven.shiftEnabled = !vierzeven.shiftEnabled;
-    print("Shift enabled = " + vierzeven.shiftEnabled);
+    console.log("Shift enabled = " + vierzeven.shiftEnabled);
 }
 
 vierzeven.extInA = function(channel, control, value, status, group) {
@@ -200,4 +241,8 @@ vierzeven.cueB = function(channel, control, value, status, group) {
             }
         }
     }
+}
+
+vierzeven.crossfader = function(channel, control, value, status, group) {
+    console.log("Crossfader moved to " + value);
 }
