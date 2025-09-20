@@ -1,54 +1,17 @@
+// Confirm that the script is loaded at startup
 console.log("vierzeven-scripts.js loaded");
-
-// Ensure midi object exists (Mixxx provides it in controller scripts)
-if (typeof midi === 'undefined') {
-    var midi = {};
-    midi.sendShortMsg = function() {
-        // Dummy implementation for testing outside Mixxx
-        console.log("midi.sendShortMsg called with", arguments);
-    };
-}
-
-// Ensure engine object exists (Mixxx provides it in controller scripts)
-if (typeof engine === 'undefined') {
-    var engine = {
-        setParameter: function(group, control, value) {
-            console.log("engine.setParameter called with", group, control, value);
-        },
-        setValue: function(group, control, value) {
-            console.log("engine.setValue called with", group, control, value);
-        },
-        scratchTick: function(deck, value) {
-            console.log("engine.scratchTick called with", deck, value);
-        },
-        scratchEnable: function(deck, samplesPerRev, rpm, alpha, beta) {
-            console.log("engine.scratchEnable called with", deck, samplesPerRev, rpm, alpha, beta);
-        },
-        scratchDisable: function(deck) {
-            console.log("engine.scratchDisable called with", deck);
-        }
-    };
-}
-
-// function jogWheel(channel, control, value, status, group) {
-//     return vierzeven.jogWheel(channel, control, value, status, group);
-// }
 
 var vierzeven = {};
 
 vierzeven.debug = true;
 vierzeven.escratch = [false, false];
-
 vierzeven.shiftEnabled = false;
 vierzeven.pflA = false;
 vierzeven.pflB = false;
 
-//sensitivity setting
+// Sensitivity setting
 vierzeven.UseAcceleration = true;
 vierzeven.JogSensivity = 0.5;
-
-
-
 
 vierzeven.init = function (id) { // called when the device is opened & set up
     
@@ -98,36 +61,28 @@ vierzeven.jogWheel = function (channel, control, value, status, group) {
 
     console.log("JOGGING... JOGGING...");
 
+    // When SHIFT is pressed, the jogwheels are used to move through the library
     if (vierzeven.shiftEnabled) {
         if (value >= 65) {
             engine.setParameter("[Library]", "MoveDown", 0.5);
         } else {
             engine.setParameter("[Library]", "MoveUp", 0.5);
         }
+    // When SHIFT is not pressed, the jogwheels are used for scratching/pitch bending
     } else {
         let deck = vierzeven.getDeck(group);
-
         if (vierzeven.escratch[deck]) {
-        
-    
             let scratchValue = (value - 0x40);
             engine.scratchTick(deck + 1, scratchValue);
-    
             if (vierzeven.debug)
                 console.log(group + " scratch tick : " + scratchValue);
-    
         } else {
-    
             let jogValue = (value - 0x40) * vierzeven.JogSensivity;
             engine.setValue(group, "jog", jogValue);
-    
             if (vierzeven.debug)
                 console.log(group + " pitching jog adjust : " + jogValue);
-    
         }
-    
     }
-
 };
 
 //Scratch button function 
