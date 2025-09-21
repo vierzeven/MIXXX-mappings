@@ -746,17 +746,97 @@
 
         <!-- DECK A -->
 
+            <!-- LOW KILL -->
+            <output>
+                <group>[Channel1]</group>
+                <key>filterLowKill</key>
+                <status>0xB0</status>
+                <!-- MIDI CC no. 24 --> 
+                <midino>0x18</midino>
+                <minimum>0.5</minimum>
+                <maximum>1</maximum>
+                <on>0x7f</on>
+                <off>0x0</off>
+            </output>
+
             <!-- MID KILL -->
             <output>
-                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
-                <key>button_parameter2</key>
+                <group>[Channel1]</group>
+                <key>filterMidKill</key>
                 <status>0xB0</status>
-                <!-- MIDI CC no. 24 -->                
+                <!-- MIDI CC no. 23 --> 
                 <midino>0x17</midino>
                 <minimum>0.5</minimum>
-            </output>  
+                <maximum>1</maximum>
+                <on>0x7f</on>
+                <off>0x0</off>
+            </output>
 
             <!-- HIGH KILL -->
+            <output>
+                <group>[Channel1]</group>
+                <key>filterHighKill</key>
+                <status>0xB0</status>
+                <!-- MIDI CC no. 22 --> 
+                <midino>0x16</midino>
+                <minimum>0.5</minimum>
+                <maximum>1</maximum>
+                <on>0x7f</on>
+                <off>0x0</off>
+            </output>     
+
+        <!-- DECK B -->
+
+            <!-- LOW KILL -->
+            <output>
+                <group>[Channel2]</group>
+                <key>filterLowKill</key>
+                <status>0xB0</status>
+                <!-- MIDI CC no. 16 --> 
+                <midino>0x10</midino>
+                <minimum>0.5</minimum>
+                <maximum>1</maximum>
+                <on>0x7f</on>
+                <off>0x0</off>
+            </output>
+
+            <!-- MID KILL -->
+            <output>
+                <group>[Channel2]</group>
+                <key>filterMidKill</key>
+                <status>0xB0</status>
+                <!-- MIDI CC no. 15 --> 
+                <midino>0x0F</midino>
+                <minimum>0.5</minimum>
+                <maximum>1</maximum>
+                <on>0x7f</on>
+                <off>0x0</off>
+            </output>
+
+            <!-- HIGH KILL -->
+            <output>
+                <group>[Channel2]</group>
+                <key>filterHighKill</key>
+                <status>0xB0</status>
+                <!-- MIDI CC no. 14 --> 
+                <midino>0x0E</midino>
+                <minimum>0.5</minimum>
+                <maximum>1</maximum>
+                <on>0x7f</on>
+                <off>0x0</off>
+            </output>  
+
+
+
+            <!-- RELOOP -->
+            <output>
+                <group>[Channel1]</group>
+                <key>loop_enabled</key>
+                <status>0xB0</status>
+                <midino>0x15</midino>
+                <minimum>0.5</minimum>
+            </output>                   
+
 
 
             <output>
@@ -766,13 +846,7 @@
                 <midino>0x11</midino>
                 <minimum>0.5</minimum>
             </output>
-            <output>
-                <group>[Channel1]</group>
-                <key>loop_enabled</key>
-                <status>0xB0</status>
-                <midino>0x15</midino>
-                <minimum>0.5</minimum>
-            </output>
+
             <output>
                 <group>[Channel1]</group>
                 <key>pfl</key>
