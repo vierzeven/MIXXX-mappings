@@ -10,555 +10,777 @@
             <file filename="vierzeven-scripts.js" functionprefix="vierzeven"/>
         </scriptfiles>
         <controls>
-        <!-- MASTER CONTROLS -->
-            <control>
-                <!-- group en key specificeren welke functionaliteit in Mixxx we aan het mappen zijn -->
-                <!-- Let op: als we een scriptbinding maken, specificeert key welke functie we willen aanroepen -->
-                <group>[Master]</group>
-                <key>crossfader</key>
-                <!-- status en midino (ctrl in de debugger) specificeren welk midi signaal we willen koppelen -->
-                <status>0xB0</status>
-                <midino>0x01</midino>
-                <!-- options geeft aan of het bijvoorbeeld een button is, of dat we iets willen scripten -->
-                <options>
-                </options>
-            </control>
-        <!-- CHANNEL 1 CONTROLS -->
-            <!-- BACK -->
-            <control>
-                <group>[Channel1]</group>
-                <key>back</key>
-                <status>0x90</status>
-                <midino>0x00</midino>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <!-- SCRATCH BUTTON -->
-            <control>
-                <group>[Channel1]</group>
-                <key>vierzeven.scratchButton</key>
-                <status>0x90</status>
-                <midino>0x11</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>            
-            <!-- FWD -->
-            <control>
-                <group>[Channel1]</group>
-                <key>fwd</key>
-                <status>0x90</status>
-                <midino>0x01</midino>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <!-- VOLUME -->
-            <control>
-                <group>[Channel1]</group>
-                <key>volume</key>
-                <status>0xB0</status>
-                <midino>0x00</midino>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <!-- RATE TEMP DOWN -->
-            <control>
-                <group>[Channel1]</group>
-                <key>rate_temp_down</key>
-                <status>0x90</status>
-                <midino>0x02</midino>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <!-- RATE TEMP UP -->
-            <control>
-                <group>[Channel1]</group>
-                <key>rate_temp_up</key>
-                <status>0x90</status>
-                <midino>0x03</midino>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <!-- EQ LOW DIAL -->
+
+        <!-- group en key specificeren welke functionaliteit in Mixxx we aan het mappen zijn -->
+        <!-- status en midino (ctrl in de debugger) specificeren welk midi signaal we willen koppelen -->
+        <!-- Let op: als we een scriptbinding maken, specificeert key welke functie we willen aanroepen -->
+        <!-- options geeft aan of het bijvoorbeeld een button is, of dat we iets willen scripten -->
+        
+    <!-- ROTARY CONTROL FUNCTIONS -->
+
+        <!-- DECK A -->
+
+            <!-- LOW (EQ) -->
             <control>
                 <group>[EqualizerRack1_[Channel1]_Effect1]</group>
                 <key>parameter1</key>
                 <status>0xB0</status>
+                <!-- MIDI CC no. 3 -->
                 <midino>0x03</midino>
                 <options>
                     <normal/>
                 </options>
             </control>
-            <!-- EQ MID DIAL -->
+
+            <!-- MID (EQ) -->
             <control>
                 <group>[EqualizerRack1_[Channel1]_Effect1]</group>
                 <key>parameter2</key>
                 <status>0xB0</status>
+                <!-- MIDI CC no. 4 -->
                 <midino>0x04</midino>
                 <options>
                     <normal/>
                 </options>
             </control>
-            <!-- EQ HIGH DIAL -->
+
+            <!-- HIGH (EQ) -->
             <control>
                 <group>[EqualizerRack1_[Channel1]_Effect1]</group>
                 <key>parameter3</key>
                 <status>0xB0</status>
+                <!-- MIDI CC no. 5 -->                
                 <midino>0x05</midino>
                 <options>
                     <normal/>
                 </options>
             </control>
-            <!-- CUE SET -->
-            <control>
-                <group>[Channel1]</group>
-                <key>cue_set</key>
-                <status>0x90</status>
-                <midino>0x04</midino>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <!-- RELOOP TOGGLE -->
-            <control>
-                <group>[Channel1]</group>
-                <key>reloop_toggle</key>
-                <status>0x90</status>
-                <midino>0x05</midino>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <!-- PREGAIN -->
+
+            <!-- GAIN -->
             <control>
                 <group>[Channel1]</group>
                 <key>pregain</key>
                 <status>0xB0</status>
+                <!-- MIDI CC no. 6 -->                 
                 <midino>0x06</midino>
                 <options>
                     <normal/>
                 </options>
-            </control>
-            <!-- EQ LOW DIAL -->
+            </control>              
+
+        <!-- DECK B -->
+
+            <!-- LOW (EQ) -->
             <control>
                 <group>[EqualizerRack1_[Channel2]_Effect1]</group>
                 <key>parameter1</key>
                 <status>0xB0</status>
+                <!-- MIDI CC no. 7 -->
                 <midino>0x07</midino>
                 <options>
                     <normal/>
                 </options>
             </control>
-            <control>
-                <group>[Channel2]</group>
-                <key>rate_temp_down</key>
-                <status>0x90</status>
-                <midino>0x08</midino>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <!-- EQ MID -->
+
+            <!-- MID (EQ) -->
             <control>
                 <group>[EqualizerRack1_[Channel2]_Effect1]</group>
                 <key>parameter2</key>
                 <status>0xB0</status>
+                <!-- MIDI CC no. 8 -->
                 <midino>0x08</midino>
                 <options>
                     <normal/>
                 </options>
             </control>
-            <control>
-                <group>[Channel2]</group>
-                <key>rate_temp_up</key>
-                <status>0x90</status>
-                <midino>0x09</midino>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <!-- EQ HIGH -->
+
+            <!-- HIGH (EQ) -->
             <control>
                 <group>[EqualizerRack1_[Channel2]_Effect1]</group>
                 <key>parameter3</key>
                 <status>0xB0</status>
+                <!-- MIDI CC no. 9 -->                
                 <midino>0x09</midino>
                 <options>
                     <normal/>
                 </options>
-            </control>
-            <control>
-                <group>[Channel2]</group>
-                <key>cue_set</key>
-                <status>0x90</status>
-                <midino>0x0A</midino>
-                <options>
-                    <button/>
-                </options>
-            </control>
+            </control>  
+
+            <!-- GAIN -->               
             <control>
                 <group>[Channel2]</group>
                 <key>pregain</key>
                 <status>0xB0</status>
+                <!-- MIDI CC no. 10 -->                  
                 <midino>0x0A</midino>
                 <options>
                     <normal/>
                 </options>
-            </control>
-            <control>
-                <group>[Channel2]</group>
-                <key>reloop_toggle</key>
-                <status>0x90</status>
-                <midino>0x0B</midino>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <group>[Channel1]</group>
-                <key>rate</key>
-                <description>MIDI Learned from 326 messages.</description>
-                <status>0xB0</status>
-                <midino>0x0B</midino>
-                <options>
-                    <invert/>
-                </options>
-            </control>
-            <control>
-                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
-                <key>parameter1</key>
-                <status>0x90</status>
-                <midino>0x0C</midino>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <group>[Channel2]</group>
-                <key>volume</key>
-                <status>0xB0</status>
-                <midino>0x02</midino>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <group>[Channel2]</group>
-                <key>rate</key>
-                <description>MIDI Learned from 317 messages.</description>
-                <status>0xB0</status>
-                <midino>0x0C</midino>
-                <options>
-                    <invert/>
-                </options>
-            </control>
-            <control>
-                <group>[Channel1]</group>
-                <key>filterMidKill</key>
-                <status>0x90</status>
-                <midino>0x0D</midino>
-                <options>
-                    <button/>
-                </options>
-            </control>
+            </control>   
+
+        <!-- FX CONTROL -->
+
+            <!-- DATA1 -->
             <control>
                 <group>[QuickEffectRack1_[Channel1]]</group>
                 <key>super1</key>
                 <status>0xB0</status>
+                <!-- MIDI CC no. 13 -->                  
                 <midino>0x0D</midino>
                 <options>
                     <normal/>
                 </options>
             </control>
+
+        <!-- OUTPUT -->
+
+            <!-- PHONES MIX -->
+            <control>
+                <group>[Master]</group>
+                <key>headMix</key>
+                <status>0xB0</status>
+                <!-- MIDI CC no. 11 -->                   
+                <midino>0x11</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>    
+
+    <!-- INFINITELY VARIABLE ENCODER FUNCTIONS -->
+
+        <!-- DECK A -->
+
+            <!-- PITCH BEND/CUE SEARCH WHEEL -->
             <control>
                 <group>[Channel1]</group>
-                <key>filterHighKill</key>
+                <key>vierzeven.jogWheel</key>
+                <status>0xB0</status>
+                <!-- MIDI CC no. 19 -->                 
+                <midino>0x13</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+        <!-- DECK B -->
+
+            <!-- PITCH BEND/CUE SEARCH WHEEL -->
+            <control>
+                <group>[Channel2]</group>
+                <key>vierzeven.jogWheel</key>
+                <status>0xB0</status>
+                <!-- MIDI CC no. 18 -->                 
+                <midino>0x12</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+    <!-- FADER FUNCTIONS -->
+
+        <!-- DECK A -->
+
+            <!-- PITCH FADER -->
+            <control>
+                <group>[Channel1]</group>
+                <key>rate</key>
+                <status>0xB0</status>
+                <!-- MIDI CC no. 11 -->                   
+                <midino>0x0B</midino>
+                <options>
+                    <invert/>
+                </options>
+            </control>   
+
+            <!-- VOLUME FADER -->
+            <control>
+                <group>[Channel1]</group>
+                <key>volume</key>
+                <status>0xB0</status>
+                <!-- MIDI CC no. 0 -->
+                <midino>0x00</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>  
+
+        <!-- DECK A<>B -->
+
+            <!-- CROSS FADER -->
+            <control>
+                <group>[Master]</group>
+                <key>crossfader</key>
+                <status>0xB0</status>
+                <!-- MIDI CC no. 1 -->
+                <midino>0x01</midino>
+                <options>
+                </options>
+            </control>
+
+        <!-- DECK B -->
+
+            <!-- PITCH FADER -->
+            <control>
+                <group>[Channel2]</group>
+                <key>rate</key>
+                <status>0xB0</status>
+                <!-- MIDI CC no. 12 -->
+                <midino>0x0C</midino>
+                <options>
+                    <invert/>
+                </options>
+            </control>  
+
+            <!-- VOLUME FADER -->
+            <control>
+                <group>[Channel2]</group>
+                <key>volume</key>
+                <status>0xB0</status>
+                <!-- MIDI CC no. 2 -->
+                <midino>0x02</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>    
+
+    <!-- SENDING BUTTON FUNCTIONS -->
+
+        <!-- DECK A -->
+
+            <!-- SEARCH BACK -->
+            <control>
+                <group>[Channel1]</group>
+                <key>back</key>
                 <status>0x90</status>
+                <!-- MIDI note no. 0 -->
+                <!-- MIDI note name C-1 -->
+                <midino>0x00</midino>
+                <options>
+                    <button/>
+                </options>
+            </control>
+
+            <!-- SEARCH FORWARD -->
+            <control>
+                <group>[Channel1]</group>
+                <key>fwd</key>
+                <status>0x90</status>
+                <!-- MIDI note no. 1 -->
+                <!-- MIDI note name C#-1 -->
+                <midino>0x01</midino>
+                <options>
+                    <button/>
+                </options>
+            </control>
+
+            <!-- BEND DOWN -->
+            <control>
+                <group>[Channel1]</group>
+                <key>rate_temp_down</key>
+                <status>0x90</status>
+                <!-- MIDI note no. 2 -->
+                <!-- MIDI note name D-1 -->                
+                <midino>0x02</midino>
+                <options>
+                    <button/>
+                </options>
+            </control>
+
+            <!-- BEND UP -->
+            <control>
+                <group>[Channel1]</group>
+                <key>rate_temp_up</key>
+                <status>0x90</status>
+                <!-- MIDI note no. 3 -->
+                <!-- MIDI note name D#-1 -->                  
+                <midino>0x03</midino>
+                <options>
+                    <button/>
+                </options>
+            </control>
+
+            <!-- LOW KILL -->
+            <control>
+                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
+                <key>parameter1</key>
+                <status>0x90</status>
+                <!-- MIDI note no. 12 -->
+                <!-- MIDI note name C-0 -->                  
+                <midino>0x0C</midino>
+                <options>
+                    <button/>
+                </options>
+            </control>
+
+            <!-- MID KILL -->
+            <control>
+                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
+                <key>parameter2</key>
+                <status>0x90</status>
+                <!-- MIDI note no. 13 -->
+                <!-- MIDI note name C#-0 -->                  
+                <midino>0x0D</midino>
+                <options>
+                    <button/>
+                </options>
+            </control>
+
+            <!-- HIGH KILL -->
+            <control>
+                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
+                <key>parameter3</key>
+                <status>0x90</status>
+                <!-- MIDI note no. 14 -->
+                <!-- MIDI note name D-0 -->                 
                 <midino>0x0E</midino>
                 <options>
                     <button/>
                 </options>
             </control>
+
+            <!-- SET CUE -->
             <control>
-                <group>[EffectRack1_EffectUnit1_Effect1]</group>
-                <key>meta</key>
-                <status>0xB0</status>
-                <midino>0x0E</midino>
+                <group>[Channel1]</group>
+                <key>cue_set</key>
+                <status>0x90</status>
+                <!-- MIDI note no. 4 -->
+                <!-- MIDI note name E-1 -->                  
+                <midino>0x04</midino>
                 <options>
-                    <normal/>
+                    <button/>
                 </options>
             </control>
+
+            <!-- SET LOOP -->
+            <control>
+                <group>[Channel1]</group>
+                <key>beatloop_activate</key>
+                <status>0x90</status>
+                <!-- MIDI note no. 15 -->
+                <!-- MIDI note name D#-0 -->                   
+                <midino>0x0F</midino>
+                <options>
+                    <button/>
+                </options>
+            </control>
+
+            <!-- RELOOP -->
+            <control>
+                <group>[Channel1]</group>
+                <key>reloop_toggle</key>
+                <status>0x90</status>
+                <!-- MIDI note no. 5 -->
+                <!-- MIDI note name F-1 -->                   
+                <midino>0x05</midino>
+                <options>
+                    <button/>
+                </options>
+            </control>
+
+            <!-- SYNC -->
+            <control>
+                <group>[Channel1]</group>
+                <key>beatsync</key>
+                <status>0x90</status>
+                <!-- MIDI note no. 16 -->
+                <!-- MIDI note name E-0 -->                  
+                <midino>0x10</midino>
+                <options>
+                    <button/>
+                </options>
+            </control>
+
+            <!-- SCRATCH -->
+            <control>
+                <group>[Channel1]</group>
+                <key>vierzeven.scratchButton</key>
+                <status>0x90</status>
+                <!-- MIDI note no. 17 -->
+                <!-- MIDI note name F-0 -->                  
+                <midino>0x11</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>    
+            
+            <!-- PLAY -->
+            <control>
+                <group>[Channel1]</group>
+                <key>play</key>
+                <status>0x90</status>
+                <!-- MIDI note no. 18 -->
+                <!-- MIDI note name F#-0 -->                 
+                <midino>0x12</midino>
+                <options>
+                    <button/>
+                </options>
+            </control>
+
+            <!-- CUE -->
+            <control>
+                <group>[Channel1]</group>
+                <key>cue_default</key>
+                <status>0x90</status>
+                <!-- MIDI note no. 19 -->
+                <!-- MIDI note name G-0 -->                  
+                <midino>0x13</midino>
+                <options>
+                    <button/>
+                </options>
+            </control>
+
+        <!-- DECK B -->
+
+            <!-- SEARCH BACK -->
             <control>
                 <group>[Channel2]</group>
                 <key>back</key>
                 <status>0x90</status>
+                <!-- MIDI note no. 6 -->
+                <!-- MIDI note name F#-1 -->
                 <midino>0x06</midino>
                 <options>
                     <button/>
                 </options>
             </control>
+
+            <!-- SEARCH FORWARD -->
             <control>
                 <group>[Channel2]</group>
                 <key>fwd</key>
                 <status>0x90</status>
+                <!-- MIDI note no. 7 -->
+                <!-- MIDI note name G-1 -->
                 <midino>0x07</midino>
                 <options>
                     <button/>
                 </options>
             </control>
-            <control>
-                <group>[Channel1]</group>
-                <key>beatloop_activate</key>
-                <status>0x90</status>
-                <midino>0x0F</midino>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <group>[EffectRack1_EffectUnit2_Effect1]</group>
-                <key>meta</key>
-                <status>0xB0</status>
-                <midino>0x0F</midino>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <group>[Channel1]</group>
-                <key>beatsync</key>
-                <status>0x90</status>
-                <midino>0x10</midino>
-                <options>
-                    <button/>
-                </options>
-            </control>
-            <control>
-                <group>[QuickEffectRack1_[Channel2]]</group>
-                <key>super1</key>
-                <status>0xB0</status>
-                <midino>0x10</midino>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <group>[Master]</group>
-                <key>headMix</key>
-                <status>0xB0</status>
-                <midino>0x11</midino>
-                <options>
-                    <normal/>
-                </options>
-            </control>
-            <control>
-                <group>[Channel1]</group>
-                <key>play</key>
-                <status>0x90</status>
-                <midino>0x12</midino>
-                <options>
-                    <button/>
-                </options>
-            </control>
+
+            <!-- BEND DOWN -->
             <control>
                 <group>[Channel2]</group>
-                <key>vierzeven.jogWheel</key>
-                <status>0xB0</status>
-                <midino>0x12</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
-            <control>
-                <group>[Channel1]</group>
-                <key>cue_default</key>
+                <key>rate_temp_down</key>
                 <status>0x90</status>
-                <midino>0x13</midino>
+                <!-- MIDI note no. 8 -->
+                <!-- MIDI note name G#-1 -->                
+                <midino>0x08</midino>
                 <options>
                     <button/>
                 </options>
             </control>
-            <control>
-                <group>[Channel1]</group>
-                <key>vierzeven.jogWheel</key>
-                <status>0xB0</status>
-                <midino>0x13</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
+
+            <!-- BEND UP -->
             <control>
                 <group>[Channel2]</group>
-                <key>filterLowKill</key>
+                <key>rate_temp_up</key>
                 <status>0x90</status>
+                <!-- MIDI note no. 9 -->
+                <!-- MIDI note name A-1 -->                  
+                <midino>0x09</midino>
+                <options>
+                    <button/>
+                </options>
+            </control>
+
+            <!-- LOW KILL -->
+            <control>
+                <group>[EqualizerRack1_[Channel2]_Effect1]</group>
+                <key>parameter1</key>
+                <status>0x90</status>
+                <!-- MIDI note no. 20 -->
+                <!-- MIDI note name G#-0 -->                  
                 <midino>0x14</midino>
                 <options>
                     <button/>
                 </options>
             </control>
+
+            <!-- MID KILL -->
             <control>
-                <group>[Channel2]</group>
-                <key>filterMidKill</key>
+                <group>[EqualizerRack1_[Channel2]_Effect1]</group>
+                <key>parameter2</key>
                 <status>0x90</status>
+                <!-- MIDI note no. 21 -->
+                <!-- MIDI note name A-0 -->                  
                 <midino>0x15</midino>
                 <options>
                     <button/>
                 </options>
             </control>
+
+            <!-- HIGH KILL -->
             <control>
                 <group>[EqualizerRack1_[Channel2]_Effect1]</group>
-                <key>button_parameter3</key>
+                <key>parameter3</key>
                 <status>0x90</status>
+                <!-- MIDI note no. 22 -->
+                <!-- MIDI note name A#-0 -->                 
                 <midino>0x16</midino>
                 <options>
                     <button/>
                 </options>
             </control>
+
+            <!-- SET CUE -->
+            <control>
+                <group>[Channel2]</group>
+                <key>cue_set</key>
+                <status>0x90</status>
+                <!-- MIDI note no. 10 -->
+                <!-- MIDI note name A#-1 -->                  
+                <midino>0x0A</midino>
+                <options>
+                    <button/>
+                </options>
+            </control>
+
+            <!-- SET LOOP -->
             <control>
                 <group>[Channel2]</group>
                 <key>beatloop_activate</key>
                 <status>0x90</status>
+                <!-- MIDI note no. 23 -->
+                <!-- MIDI note name B-0 -->                   
                 <midino>0x17</midino>
                 <options>
                     <button/>
                 </options>
             </control>
+
+            <!-- RELOOP -->
+            <control>
+                <group>[Channel2]</group>
+                <key>reloop_toggle</key>
+                <status>0x90</status>
+                <!-- MIDI note no. 11 -->
+                <!-- MIDI note name B-1 -->                   
+                <midino>0x0B</midino>
+                <options>
+                    <button/>
+                </options>
+            </control>
+
+            <!-- SYNC -->
             <control>
                 <group>[Channel2]</group>
                 <key>beatsync</key>
                 <status>0x90</status>
+                <!-- MIDI note no. 24 -->
+                <!-- MIDI note name C-1 -->                  
                 <midino>0x18</midino>
                 <options>
                     <button/>
                 </options>
             </control>
+
+            <!-- SCRATCH -->
             <control>
                 <group>[Channel2]</group>
-                <key>scratch2_enabled</key>
+                <key>vierzeven.scratchButton</key>
                 <status>0x90</status>
+                <!-- MIDI note no. 25 -->
+                <!-- MIDI note name C#-1 -->                  
                 <midino>0x19</midino>
                 <options>
-                    <button/>
+                    <script-binding/>
                 </options>
-            </control>
+            </control>    
+            
+            <!-- PLAY -->
             <control>
                 <group>[Channel2]</group>
                 <key>play</key>
                 <status>0x90</status>
+                <!-- MIDI note no. 26 -->
+                <!-- MIDI note name D-1 -->                 
                 <midino>0x1A</midino>
                 <options>
                     <button/>
                 </options>
             </control>
+
+            <!-- CUE -->
             <control>
                 <group>[Channel2]</group>
                 <key>cue_default</key>
                 <status>0x90</status>
+                <!-- MIDI note no. 27 -->
+                <!-- MIDI note name D#-1 -->                  
                 <midino>0x1B</midino>
                 <options>
                     <button/>
                 </options>
-            </control>
-            <control>
-                <group></group>
-                <key>vierzeven.toggleShift</key>
-                <status>0x90</status>
-                <midino>0x1C</midino>
-                <options>
-                    <script-binding/>
-                </options>
-            </control>
+            </control>    
+
+        <!-- INPUT SELECT -->
+
+            <!-- EXT IN A -->
             <control>
                 <group>[Channel1]</group>
                 <key>vierzeven.extInA</key>
                 <status>0x90</status>
+                <!-- MIDI note no. 29 -->
+                <!-- MIDI note name F-1 -->                 
                 <midino>0x1D</midino>
                 <options>
                     <script-binding/>
                 </options>
             </control>
+
+            <!-- EXT IN B -->
             <control>
                 <group>[Channel2]</group>
                 <key>vierzeven.extInB</key>
                 <status>0x90</status>
+                <!-- MIDI note no. 30 -->
+                <!-- MIDI note name F#-1 -->                 
                 <midino>0x1E</midino>
                 <options>
                     <script-binding/>
                 </options>
             </control>
+
+        <!-- FX CONTROL -->
+
+            <!-- ON (FX UNIT ACTIVE) -->
             <control>
                 <group>[QuickEffectRack1_[Channel1]_Effect1]</group>
                 <key>enabled</key>
                 <status>0x90</status>
+                <!-- MIDI note no. 31 -->
+                <!-- MIDI note name G-1 -->                  
                 <midino>0x1F</midino>
                 <options>
                     <button/>
                 </options>
             </control>
+
+            <!-- FX PRESET DOWN -->
             <control>
                 <group>[EffectRack1_EffectUnit1_Effect1]</group>
                 <key>enabled</key>
                 <status>0x90</status>
+                <!-- MIDI note no. 32 -->
+                <!-- MIDI note name G#-1 -->                   
                 <midino>0x20</midino>
                 <options>
                     <button/>
                 </options>
             </control>
+
+            <!-- FX PRESET UP -->
             <control>
                 <group>[EffectRack1_EffectUnit2_Effect1]</group>
                 <key>enabled</key>
                 <status>0x90</status>
+                <!-- MIDI note no. 33 -->
+                <!-- MIDI note name A-1 -->                 
                 <midino>0x21</midino>
                 <options>
                     <button/>
                 </options>
             </control>
+
+            <!-- ACTION (or TAP) -->
             <control>
                 <group>[QuickEffectRack1_[Channel2]_Effect1]</group>
                 <key>enabled</key>
                 <status>0x90</status>
+                <!-- MIDI note no. 34 -->
+                <!-- MIDI note name A#-1 -->                  
                 <midino>0x22</midino>
                 <options>
                     <button/>
                 </options>
             </control>
+
+        <!-- CUE SELECT -->
+
+            <!-- CUE A -->
             <control>
                 <group>[Channel1]</group>
                 <key>vierzeven.cueA</key>
                 <status>0x90</status>
+                <!-- MIDI note no. 35 -->
+                <!-- MIDI note name B-1 -->                  
                 <midino>0x23</midino>
                 <options>
                     <script-binding/>
                 </options>
             </control>
+
+            <!-- CUE B -->
             <control>
                 <group>[Channel2]</group>
                 <key>vierzeven.cueB</key>
                 <status>0x90</status>
+                <!-- MIDI note no. 36 -->
+                <!-- MIDI note name C-2 -->                   
                 <midino>0x24</midino>
                 <options>
                     <script-binding/>
                 </options>
             </control>
-        </controls>
+
+        <!-- KEY DECK A+B -->
+
+            <!-- KEY DECK A+B (Activates Time Stretch mode for Decks A+B simultaneously) -->
+            <control>
+                <group></group>
+                <key>vierzeven.toggleShift</key>
+                <status>0x90</status>
+                <!-- MIDI note no. 28 -->
+                <!-- MIDI note name E-1 -->                   
+                <midino>0x1C</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+
+        </controls> 
+
         <outputs>
+
+    <!-- RECEIVING MIDI COMMANDS (LEDS) -->
+
+        <!-- DECK A -->
+
+            <!-- LOW KILL -->
+            <output>
+                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
+                <key>button_parameter1</key>
+                <status>0xB0</status>
+                <!-- MIDI CC no. 24 -->                
+                <midino>0x18</midino>
+                <minimum>0.5</minimum>
+            </output>
+
+            <!-- MID KILL -->
+            <output>
+                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
+                <key>button_parameter2</key>
+                <status>0xB0</status>
+                <!-- MIDI CC no. 23 -->                
+                <midino>0x17</midino>
+                <minimum>0.5</minimum>
+            </output>  
+
+            <!-- HIGH KILL -->
+            <output>
+                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
+                <key>button_parameter3</key>
+                <status>0xB0</status>
+                <!-- MIDI CC no. 22 -->                
+                <midino>0x16</midino>
+                <minimum>0.5</minimum>
+            </output> 
+
             <output>
                 <group>[Channel1]</group>
                 <key>cue_default</key>
                 <status>0xB0</status>
                 <midino>0x11</midino>
-                <minimum>0.5</minimum>
-            </output>
-            <output>
-                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
-                <key>button_parameter1</key>
-                <status>0xB0</status>
-                <midino>0x18</midino>
                 <minimum>0.5</minimum>
             </output>
             <output>
