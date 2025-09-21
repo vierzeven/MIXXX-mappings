@@ -301,8 +301,8 @@
 
             <!-- LOW KILL -->
             <control>
-                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
-                <key>parameter1</key>
+                <group>[Channel1]</group>
+                <key>filterLowKill</key>
                 <status>0x90</status>
                 <!-- MIDI note no. 12 -->
                 <!-- MIDI note name C-0 -->                  
@@ -314,8 +314,8 @@
 
             <!-- MID KILL -->
             <control>
-                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
-                <key>parameter2</key>
+                <group>[Channel1]</group>
+                <key>filterMidKill</key>
                 <status>0x90</status>
                 <!-- MIDI note no. 13 -->
                 <!-- MIDI note name C#-0 -->                  
@@ -327,8 +327,8 @@
 
             <!-- HIGH KILL -->
             <control>
-                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
-                <key>parameter3</key>
+                <group>[Channel1]</group>
+                <key>filterHighKill</key>
                 <status>0x90</status>
                 <!-- MIDI note no. 14 -->
                 <!-- MIDI note name D-0 -->                 
@@ -485,8 +485,8 @@
 
             <!-- LOW KILL -->
             <control>
-                <group>[EqualizerRack1_[Channel2]_Effect1]</group>
-                <key>parameter1</key>
+                <group>[Channel2]</group>
+                <key>filterLowKill</key>
                 <status>0x90</status>
                 <!-- MIDI note no. 20 -->
                 <!-- MIDI note name G#-0 -->                  
@@ -498,8 +498,8 @@
 
             <!-- MID KILL -->
             <control>
-                <group>[EqualizerRack1_[Channel2]_Effect1]</group>
-                <key>parameter2</key>
+                <group>[Channel2]</group>
+                <key>filterMidKill</key>
                 <status>0x90</status>
                 <!-- MIDI note no. 21 -->
                 <!-- MIDI note name A-0 -->                  
@@ -511,8 +511,8 @@
 
             <!-- HIGH KILL -->
             <control>
-                <group>[EqualizerRack1_[Channel2]_Effect1]</group>
-                <key>parameter3</key>
+                <group>[Channel2]</group>
+                <key>filterHighKill</key>
                 <status>0x90</status>
                 <!-- MIDI note no. 22 -->
                 <!-- MIDI note name A#-0 -->                 
@@ -746,35 +746,18 @@
 
         <!-- DECK A -->
 
-            <!-- LOW KILL -->
-            <output>
-                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
-                <key>button_parameter1</key>
-                <status>0xB0</status>
-                <!-- MIDI CC no. 24 -->                
-                <midino>0x18</midino>
-                <minimum>0.5</minimum>
-            </output>
-
             <!-- MID KILL -->
             <output>
                 <group>[EqualizerRack1_[Channel1]_Effect1]</group>
                 <key>button_parameter2</key>
                 <status>0xB0</status>
-                <!-- MIDI CC no. 23 -->                
+                <!-- MIDI CC no. 24 -->                
                 <midino>0x17</midino>
                 <minimum>0.5</minimum>
             </output>  
 
             <!-- HIGH KILL -->
-            <output>
-                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
-                <key>button_parameter3</key>
-                <status>0xB0</status>
-                <!-- MIDI CC no. 22 -->                
-                <midino>0x16</midino>
-                <minimum>0.5</minimum>
-            </output> 
+
 
             <output>
                 <group>[Channel1]</group>
